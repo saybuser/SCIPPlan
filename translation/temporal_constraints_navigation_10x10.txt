@@ -1,0 +1,5 @@
+location[$x],speed[$x]*dt,0.5*accelerate[$x]*dt*dt,<=,10.0
+location[$y],speed[$y]*dt,0.5*accelerate[$y]*dt*dt,<=,10.0
+location[$x],speed[$x]*dt,0.5*accelerate[$x]*dt*dt,>=,0.0
+location[$y],speed[$y]*dt,0.5*accelerate[$y]*dt*dt,>=,0.0
+location[$x],speed[$x]*dt,0.5*accelerate[$x]*dt*dt,<=,4.0,OR,location[$x],speed[$x]*dt,0.5*accelerate[$x]*dt*dt,>=,6.0,OR,location[$y],speed[$y]*dt,0.5*accelerate[$y]*dt*dt,<=,4.0,OR,location[$y],speed[$y]*dt,0.5*accelerate[$y]*dt*dt,>=,6.0

@@ -1,0 +1,4 @@
+location[$x]',-1.0*location[$x],-1.0*speed[$x]*dt,-0.5*accelerate[$x]*dt*dt,==,0.0
+location[$y]',-1.0*location[$y],-1.0*speed[$y]*dt,-0.5*accelerate[$y]*dt*dt,==,0.0
+speed[$x]',-1.0*speed[$x],-1.0*accelerate[$x]*dt,==,0.0
+speed[$y]',-1.0*speed[$y],-1.0*accelerate[$y]*dt,==,0.0

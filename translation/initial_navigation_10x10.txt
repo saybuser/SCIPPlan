@@ -1,0 +1,4 @@
+location[$x],==,0.0
+location[$y],==,0.0
+speed[$x],==,0.0
+speed[$y],==,0.0

@@ -1,0 +1,1 @@
+action_continuous: accelerate[$x],action_continuous: accelerate[$y],action_continuous: dt,state_continuous: location[$x],state_continuous: location[$y],state_continuous: speed[$x],state_continuous: speed[$y]
