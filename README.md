@@ -1,2 +1,25 @@
 # SCIPPlan
-SCIP-based Metric Hybrid Planner
+SCIPPlan [1,2] is a SCIP-based [3] hybrid planner for domains with i) mixed (i.e., real and/or discrete valued) state and action spaces, ii) nonlinear state transitions that are functions of time, and iii) reward function.
+
+## Dependencies
+
+i) Solver: SCIP (the current implementation uses the python interface to the SCIP solver, i.e., PySCIPOpt [4]).
+
+## Running FD-SAT-Plan
+
+scipplan.py -d domain -i instance -h horizon
+
+Example: python scipplan.py -d navigation -i 10x10 -h 2
+
+## Citation
+
+If you are using SCIPPlan, please cite the papers [1,2] and the underlying SCIP solver [3].
+
+## References
+[1] Buser Say and Scott Sanner. [Metric Nonlinear Hybrid Planning with Constraint Generation](http://icaps18.icaps-conference.org/fileadmin/alg/conferences/icaps18/workshops/workshop06/docs/proceedings.pdf#page=23). In PlanSOpt, pages 19-25, 2018.
+
+[2] Buser Say and Scott Sanner. [Metric Hybrid Factored Planning in Nonlinear Domains with Constraint Generation](https://link.springer.com/chapter/10.1007/978-3-030-19212-9_33). In CPAIOR, pages 502-518 2019.
+
+[3] [SCIP](https://www.scipopt.org/).
+
+[4] [PySCIPOpt](https://github.com/SCIP-Interfaces/PySCIPOpt).
