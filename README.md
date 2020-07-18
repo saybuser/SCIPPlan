@@ -2,6 +2,11 @@
 
 SCIPPlan [1,2] is a SCIP-based [3] hybrid planner for domains with i) mixed (i.e., real and/or discrete valued) state and action spaces, ii) nonlinear state transitions that are functions of time, and iii) general reward functions. SCIPPlan iteratively i) finds violated constraints (i.e., zero-crossings) by simulating the state transitions, and ii) adds the violated constraints back to its underlying optimization model, until a valid plan is found.
 
+## Example Domain: Navigation
+
+![alt text](./hdmilpplan.png)
+Figure 1: Visualization of the learning and planning framework presented in [3] where red circles represent action variables, blue circles represent state variables, gray circles represent the activation units and w's represent the weights of the neural network.
+
 ## Dependencies
 
 i) Solver: SCIP (the current implementation uses the python interface to the SCIP solver, i.e., PySCIPOpt [4]).
