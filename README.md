@@ -7,9 +7,11 @@ i) Solver: SCIP (the current implementation uses the python interface to the SCI
 
 ## Running FD-SAT-Plan
 
-scipplan.py -d domain -i instance -h horizon
+scipplan.py -d domain -i instance -h horizon -e epsilon
 
-Example: python scipplan.py -d navigation -i 10x10 -h 2
+Example: python scipplan.py -d navigation -i 10x10 -h 2 -e 0.1
+
+Default value for epsilon (i.e., if not provided) is 0.01.
 
 ## Citation
 
