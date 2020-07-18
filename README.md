@@ -27,7 +27,7 @@ If you are using SCIPPlan, please cite the papers [1,2] and the underlying SCIP 
 ## References
 [1] Buser Say and Scott Sanner. [Metric Nonlinear Hybrid Planning with Constraint Generation](http://icaps18.icaps-conference.org/fileadmin/alg/conferences/icaps18/workshops/workshop06/docs/proceedings.pdf#page=23). In PlanSOpt, pages 19-25, 2018.
 
-[2] Buser Say and Scott Sanner. [Metric Hybrid Factored Planning in Nonlinear Domains with Constraint Generation](https://link.springer.com/chapter/10.1007/978-3-030-19212-9_33). In CPAIOR, pages 502-518 2019.
+[2] Buser Say and Scott Sanner. [Metric Hybrid Factored Planning in Nonlinear Domains with Constraint Generation](https://link.springer.com/chapter/10.1007/978-3-030-19212-9_33). In CPAIOR, pages 502-518, 2019.
 
 [3] [SCIP](https://www.scipopt.org/)
 
