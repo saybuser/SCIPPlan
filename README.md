@@ -29,6 +29,6 @@ If you are using SCIPPlan, please cite the papers [1,2] and the underlying SCIP 
 
 [2] Buser Say and Scott Sanner. [Metric Hybrid Factored Planning in Nonlinear Domains with Constraint Generation](https://link.springer.com/chapter/10.1007/978-3-030-19212-9_33). In CPAIOR, pages 502-518 2019.
 
-[3] [SCIP](https://www.scipopt.org/).
+[3] [SCIP](https://www.scipopt.org/)
 
-[4] [PySCIPOpt](https://github.com/SCIP-Interfaces/PySCIPOpt).
+[4] [PySCIPOpt](https://github.com/SCIP-Interfaces/PySCIPOpt)
