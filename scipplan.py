@@ -43,7 +43,7 @@ def encode_scipplan(domain, instance, horizon, epsilon):
         model.freeTransform()
         model = encode_violated_global_temporal_constraint(model, A, S, Aux, x, y, v, d, temporal_constraints, horizon, violated_t, zero_crossing_coef, violated_c_index)
     
-    print("Optimal Plan:")
+    print("Plan:")
     for t in range(horizon):
         for index, a in enumerate(A):
             print(a + " at time " + str(t) + " by value " + str(model.getVal(x[(a,t)])))
