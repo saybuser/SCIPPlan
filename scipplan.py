@@ -34,7 +34,7 @@ def encode_scipplan(domain, instance, horizon, epsilon):
         model.optimize()
         if len(model.getSols()) == 0:
             print("Problem is infeasible for the given horizon.")
-            break
+            return False
         violated_t, interval, violated_c_index = checkTemporalConstraintViolation(model, A, S, Aux, x, y, v, d, temporal_constraints, horizon, epsilon)
         #print(violated_t, interval, violated_c_index)
         if violated_t == -1:
@@ -43,11 +43,11 @@ def encode_scipplan(domain, instance, horizon, epsilon):
         model.freeTransform()
         model = encode_violated_global_temporal_constraint(model, A, S, Aux, x, y, v, d, temporal_constraints, horizon, violated_t, zero_crossing_coef, violated_c_index)
     
-    if len(model.getSols()) > 0:
-        print("Optimal Plan:")
-        for t in range(horizon):
-            for index, a in enumerate(A):
-                print(a + " at time " + str(t) + " by value " + str(model.getVal(x[(a,t)])))
+    print("Optimal Plan:")
+    for t in range(horizon):
+        for index, a in enumerate(A):
+            print(a + " at time " + str(t) + " by value " + str(model.getVal(x[(a,t)])))
+    return True
 
 def checkTemporalConstraintViolation(model, A, S, Aux, x, y, v, d, temporal_constraints, horizon, epsilon):
 
@@ -599,15 +599,16 @@ if __name__ == '__main__':
             epsilon = myargs[(arg)]
             setEpsilon = True
 
-    if setDomain and setInstance and setHorizon:
-        if setEpsilon:
-            encode_scipplan(domain, instance, int(horizon), float(epsilon))
-        else:
+    if setDomain and setInstance:
+        if not setEpsilon:
+            epsilon = "0.01"
             print 'Epsilon is not provided, and is set to 0.01.'
-            encode_scipplan(domain, instance, int(horizon), 0.01)
+        if not setHorizon:
+            horizon = "1"
+            print 'Horizon is not provided, and is set to 1.'
+        while not encode_scipplan(domain, instance, int(horizon), float(epsilon)):
+            horizon = str(int(horizon) + 1)
     elif not setDomain:
         print 'Domain is not provided.'
-    elif not setInstance:
-        print 'Instance is not provided.'
     else:
-        print 'Horizon is not provided.'
+        print 'Instance is not provided.'
