@@ -14,13 +14,15 @@ i) Solver: SCIP (the current implementation uses the python interface to the SCI
 
 ## Running SCIPPlan
 
-scipplan.py -d domain -i instance -h horizon -e epsilon
+scipplan.py -d domain -i instance -h horizon -e epsilon -g gap
 
 Example: python scipplan.py -d navigation -i 10x10 -h 2 -e 0.1
 
 Default value for horizon (i.e., if not provided) is 1. Horizon is incremented until a valid plan is found.
 
 Default value for epsilon (i.e., if not provided) is 0.01.
+
+Default value for optimality gap (i.e., if not provided) is 0.001 (i.e., 0.1%).
 
 ## Citation
 
