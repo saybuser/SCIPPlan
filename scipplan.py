@@ -3,7 +3,7 @@ import math
 from pyscipopt import Model, sqrt, log, exp
 from pyscipopt.scip import Expr, VarExpr, SumExpr, ProdExpr, quicksum #, GenExpr, ExprCons, Term
 
-def encode_scipplan(domain, instance, horizon, epsilon):
+def encode_scipplan(domain, instance, horizon, epsilon, gap):
 
     bigM = 1000.0
     
@@ -29,6 +29,8 @@ def encode_scipplan(domain, instance, horizon, epsilon):
     
     for t in range(horizon):
         model.addCons(x[("dt",t)] <= bigM)
+        
+    model.setRealParam("limits/gap", gap)
     
     while True:
         model.optimize()
@@ -584,6 +586,7 @@ if __name__ == '__main__':
     setInstance = False
     setHorizon = False
     setEpsilon = False
+    setGap = False
     
     for arg in myargs:
         if arg == "-d":
@@ -598,6 +601,9 @@ if __name__ == '__main__':
         elif arg == "-e":
             epsilon = myargs[(arg)]
             setEpsilon = True
+        elif arg == "-g":
+            gap = myargs[(arg)]
+            setGap = True
 
     if setDomain and setInstance:
         if not setEpsilon:
@@ -606,9 +612,12 @@ if __name__ == '__main__':
         if not setHorizon:
             horizon = "1"
             print 'Horizon is not provided, and is set to 1.'
+        if not setGap:
+            gap = "0.001"
+            print 'Optimality gap is not provided, and is set to 0.001.'
         import time
         start_time = time.time()
-        while not encode_scipplan(domain, instance, int(horizon), float(epsilon)):
+        while not encode_scipplan(domain, instance, int(horizon), float(epsilon), float(gap)):
             horizon = str(int(horizon) + 1)
         print 'Total Time: %.4f seconds' % (time.time() - start_time)
     elif not setDomain:
