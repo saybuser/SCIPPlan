@@ -606,8 +606,11 @@ if __name__ == '__main__':
         if not setHorizon:
             horizon = "1"
             print 'Horizon is not provided, and is set to 1.'
+        import time
+        start_time = time.time()
         while not encode_scipplan(domain, instance, int(horizon), float(epsilon)):
             horizon = str(int(horizon) + 1)
+        print 'Total Time: %.4f seconds' % (time.time() - start_time)
     elif not setDomain:
         print 'Domain is not provided.'
     else:
