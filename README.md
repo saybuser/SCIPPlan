@@ -20,6 +20,10 @@ Example: python scipplan.py -d navigation -i 10x10 -h 2 -e 0.1
 
 Default value for epsilon (i.e., if not provided) is 0.01.
 
+Default value for horizon (i.e., if not provided) is 1.
+
+Horizon is incremented until a valid plan is found.
+
 ## Citation
 
 If you are using SCIPPlan, please cite the papers [1,2] and the underlying SCIP solver [3].
