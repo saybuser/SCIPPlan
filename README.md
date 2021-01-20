@@ -18,7 +18,7 @@ scipplan.py -d domain -i instance -h horizon -e epsilon -g gap
 
 Example: python scipplan.py -d navigation -i 10x10 -h 2 -e 0.1
 
-If horizon is specified, SCIPPlan attempts to find a plan over the given horizon. Otherwise, horizon is set to 1 and is incremented until a valid plan is found.
+If horizon is specified, SCIPPlan attempts to find a plan over that horizon. Otherwise, horizon is set to 1 and is incremented until a valid plan is found.
 
 Default value for epsilon (i.e., if not provided) is 0.01.
 
