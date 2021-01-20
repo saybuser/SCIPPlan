@@ -617,7 +617,7 @@ if __name__ == '__main__':
             print 'Optimality gap is not provided, and is set to 0.001.'
         import time
         start_time = time.time()
-        while not encode_scipplan(domain, instance, int(horizon), float(epsilon), float(gap)):
+        while not encode_scipplan(domain, instance, int(horizon), float(epsilon), float(gap)) and not setHorizon:
             horizon = str(int(horizon) + 1)
         print 'Total Time: %.4f seconds' % (time.time() - start_time)
     elif not setDomain:
