@@ -189,6 +189,9 @@ If you are using SCIPPlan, please cite the papers [1,2,3] and the underlying SCI
 
 [2] Buser Say and Scott Sanner. [Metric Hybrid Factored Planning in Nonlinear Domains with Constraint Generation](https://link.springer.com/chapter/10.1007/978-3-030-19212-9_33). In CPAIOR, pages 502-518, 2019.
 
+## Implementation
+This version of SCIPPlan is implemented by Ari Gestetner as a part of the Monash FIT Summer Vacation project.
+
 [3] Buser Say. [Robust Metric Hybrid Planning in Stochastic Nonlinear Domains Using Mathematical Optimization](https://ojs.aaai.org/index.php/ICAPS/article/view/27216). In ICAPS, pages 375-383, 2023.
 
 [4] [SCIP](https://www.scipopt.org/)
