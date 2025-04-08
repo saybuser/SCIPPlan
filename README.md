@@ -14,6 +14,7 @@ Note that SCIPPlan does not linearise or discretise the domain to find a valid p
 ## Dependencies
 
 i) Solver: SCIP (the current implementation uses the python interface to the SCIP solver, i.e., PySCIPOpt [5]). This version of SCIPPlan has only been tested on PySCIOpt>=4.0.0 using earlier an version of pyscipopt may result in unintended behaviour. 
+ii) Symbolic Mathematics: SymPy [6]
 
 ## Installing and Running SCIPPlan
 In order to Install SCIPPlan you need to ensure you have a working version of the SCIP optimisation suite on your system which can be installed from [the SCIP website](https://www.scipopt.org). For more information about SCIP and PySCIPOpt refer to this [installation guide](https://github.com/scipopt/PySCIPOpt/blob/master/INSTALL.md).
@@ -29,7 +30,7 @@ To run one of these examples all you need to do is run
 ```bash
 scipplan -D navigation -I 1
 ```
-which will run the 1st instance of the navigation domain using the ODEs as the transition function. Similarly, the command
+which will run the 1st instance of the navigation domain using the ODEs as the transition function with the help of SymPy [6]. Similarly, the command
 ```bash
 scipplan -D navigation -I 1 --provide-sols
 ```
@@ -78,3 +79,5 @@ If you are using SCIPPlan, please cite the papers [1,2,3] and the underlying SCI
 [4] [SCIP](https://www.scipopt.org/)
 
 [5] [PySCIPOpt](https://github.com/SCIP-Interfaces/PySCIPOpt)
+
+[6] [SymPy](https://www.sympy.org/en/index.html)
