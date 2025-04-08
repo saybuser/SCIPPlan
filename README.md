@@ -15,7 +15,7 @@ Note that SCIPPlan does not linearise or discretise the domain to find a valid p
 
 i) Solver: SCIP (the current implementation uses the python interface to the SCIP solver, i.e., PySCIPOpt [5]). This version of SCIPPlan has only been tested on PySCIOpt>=4.0.0 using earlier an version of pyscipopt may result in unintended behaviour. 
 
-ii) Symbolic Mathematics: SymPy [6]
+ii) Symbolic Mathematics: SymPy [6].
 
 ## Installing and Running SCIPPlan
 In order to Install SCIPPlan you need to ensure you have a working version of the SCIP optimisation suite on your system which can be installed from [the SCIP website](https://www.scipopt.org). For more information about SCIP and PySCIPOpt refer to this [installation guide](https://github.com/scipopt/PySCIPOpt/blob/master/INSTALL.md).
