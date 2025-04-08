@@ -1,6 +1,6 @@
 # SCIPPlan
 
-SCIPPlan [1,2,3] is a SCIP-based [4] hybrid planner for domains with i) mixed (i.e., real and/or discrete valued) state and action spaces, ii) nonlinear state transitions that are functions of time, and iii) general reward functions. SCIPPlan iteratively i) finds violated constraints (i.e., zero-crossings) by simulating the state transitions, and ii) adds the violated (symbolic) constraints back to its underlying optimisation model, until a valid plan is found.
+SCIPPlan [1,2,3] is a SCIP-based [4] hybrid planner for domains with i) mixed (i.e., real and/or discrete valued) state and action spaces, ii) nonlinear state transitions (which can be specified as ODEs or directly as solution equations) that are functions of time, and iii) general reward functions. SCIPPlan iteratively i) finds violated constraints (i.e., zero-crossings) by simulating the state transitions, and ii) adds the violated (symbolic) constraints back to its underlying optimisation model, until a valid plan is found.
 
 ## Example Domain: Navigation
 
