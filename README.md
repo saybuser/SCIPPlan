@@ -60,22 +60,6 @@ write_to_csv("new_constraints", plan.new_constraints, config)
 write_to_csv("results", plan.results_table, config)
 ```
 
-```
-
-### ODEs (For ODEs)
-When providing a system of odes to be solved, they are to be provided as follows
-```txt
-odes:
-dd(Location_x, Dt) == Speed_x
-dd(Location_y, Dt) == Speed_y
-dd(Speed_x, Dt) == Accelerate_x
-dd(Speed_y, Dt) == Accelerate_y
-```  
-
-Note that `dd(y(t), t)` is equivalent to $\frac{\partial y(t)}{\partial t}$.
-
-Additionally, since we utilise SymPy to solve the system of odes, be aware of which systems have a solution which SymPy can solve for.  
-
 ## Citation
 
 If you are using SCIPPlan, please cite the papers [1,2,3] and the underlying SCIP solver [4].
