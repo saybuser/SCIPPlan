@@ -16,7 +16,7 @@ authors:
     family-names: Say
     email: buser.say@monash.edu
     affiliation: Monash University
-repository-code: 'https://github.com/Ariges770/SCIPPlan'
+repository-code: 'https://github.com/saybuser/SCIPPlan'
 abstract: >-
   SCIPPlan [1,2,3] is a SCIP-based [4] hybrid planner for
   domains with i) mixed (i.e., real and/or discrete valued)
