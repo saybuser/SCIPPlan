@@ -29,7 +29,11 @@ To run one of these examples all you need to do is run
 ```bash
 scipplan -D navigation -I 1
 ```
-which will run the 1st instance of the navigation domain. For more information regarding the available tags and what they mean run `scipplan --help`.
+which will run the 1st instance of the navigation domain using the ODEs as the transition function. Similarly, the command
+```bash
+scipplan -D navigation -I 1 --provide-sols
+```
+will run the the 1st instance of the navigation domain using the solution equations as the transition function. For more information regarding the available tags and what they mean run `scipplan --help`.
 
 Alternatively you can import scipplan classes to run it using python.
 ```py
