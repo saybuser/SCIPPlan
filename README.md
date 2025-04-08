@@ -43,7 +43,7 @@ from scipplan.scipplan import SCIPPlan
 from scipplan.config import Config
 from scipplan.helpers import write_to_csv
 ```
-this will import the only 2 classes and function needed to run SCIPPlan. Then to set the configuration either create an instance of the Config class by setting the params or by retrieving the cli input
+this will import the only two classes and function needed to run SCIPPlan. Then to set the configuration either create an instance of the Config class by setting the params or by retrieving the cli input
 ```py
 # Set params
 config = Config(domain="navigation", instance=1)
