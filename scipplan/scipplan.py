@@ -68,7 +68,8 @@ class SCIPPlan:
                 "zero_crossing_coefficient": zero_cross.coef,
                 "new_dt_val": zero_cross.new_dt_val,
                 "horizon": zero_cross.horizon,
-                "iteration": zero_cross.iteration
+                "iteration": zero_cross.iteration,
+                "constraint_idx": zero_cross.constraint_idx
             })
             
             if self.config.show_output is True:
@@ -80,19 +81,19 @@ class SCIPPlan:
             
             self.scip_model.freeTransform()
             
-            for idx, constraint in enumerate(self.plan.translations["temporal_constraints"]):
-                t = zero_cross.horizon
-                # aux_vars = self.plan.aux_vars["temporal_constraints"][idx][t]
-                aux_vars = const_gen_aux_vars[idx][t]
-                # Only add aux vars if there are no aux vars added for the secific constraint
-                params = self.plan.get_parser_params(horizon=t, add_aux_vars=aux_vars is None)
-                params.variables[self.config.dt_var] *= zero_cross.coef
-                exprs = PM(params).evaluate(constraint, aux_vars=aux_vars)
-                if const_gen_aux_vars[idx][t] is None:
-                    const_gen_aux_vars[idx][t] = exprs.aux_vars
-                    
-                for eqtn_idx, eqtn in enumerate(exprs):
-                    self.plan.model.addCons(eqtn, f"{constraint}_{idx}_{eqtn_idx}")
+            t = zero_cross.horizon
+            idx = zero_cross.constraint_idx
+            constraint = self.plan.translations["temporal_constraints"][idx]
+            aux_vars = self.plan.aux_vars["temporal_constraints"][idx][t]
+            # Only add aux vars if there are no aux vars added for the specific constraint
+            params = self.plan.get_parser_params(horizon=t, add_aux_vars=aux_vars is None)
+            params.variables[self.config.dt_var] *= zero_cross.coef
+            exprs = PM(params).evaluate(constraint, aux_vars=aux_vars)
+            if const_gen_aux_vars[idx][t] is None:
+                const_gen_aux_vars[idx][t] = exprs.aux_vars
+             
+            for eqtn_idx, eqtn in enumerate(exprs):
+                self.plan.model.addCons(eqtn, f"{constraint}_{idx}_{eqtn_idx}")
             
             iteration += 1
 
@@ -104,7 +105,7 @@ class SCIPPlan:
         for h in range(self.config.horizon):
             dt = self.scip_model.getVal(self.plan.variables[(self.config.dt_var, h)].model_var)
             
-            for constraint in self.plan.translations["temporal_constraints"]:
+            for idx, constraint in enumerate(self.plan.translations["temporal_constraints"]):
                 is_violated = False
                 
                 for time in iterate(0, dt, self.config.epsilon):
@@ -129,6 +130,7 @@ class SCIPPlan:
                         start=cross_interval[0],
                         end=cross_interval[1],
                         dt_interval=dt,
+                        constraint_idx = idx,
                     )
         
         return ZeroCrossing(is_violated=False)

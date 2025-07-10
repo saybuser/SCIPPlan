@@ -11,6 +11,7 @@ class ZeroCrossing:
     dt_interval: float = None
     coef: float = field(init=False, default=None)
     new_dt_val: float = field(init=False, default=None)
+    constraint_idx: int = None
     
     def __post_init__(self):
         if self.is_violated is True:
