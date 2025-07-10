@@ -204,7 +204,8 @@ class ParseModel:
                             else:
                                 aux_var: Variable = self.expressions.aux_vars[idx]
                     
-                            aux_vars.append(aux_var)
+                            if self.params.add_aux_vars is True:
+                                aux_vars.append(aux_var)
                             self.variables[aux_var.name] = aux_var.model_var
                             
                             expr1, expr2 = linearise(expr, aux_var)
