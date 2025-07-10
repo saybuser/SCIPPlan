@@ -94,6 +94,7 @@ class SCIPPlan:
              
             for eqtn_idx, eqtn in enumerate(exprs):
                 self.plan.model.addCons(eqtn, f"{constraint}_{idx}_{eqtn_idx}")
+                print(eqtn)
             
             iteration += 1
 
