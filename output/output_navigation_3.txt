@@ -1,19 +1,20 @@
-SCIPPlan Version: 0.1.0alpha33
-SCIP Version: 8.04
-PySCIPOpt Version: 4.4.0
+SCIPPlan Version: 0.2.1alpha0
+SCIP Version: 9.01
+PySCIPOpt Version: 5.2.1
 
-Horizon is not provided, and is set to 1
-Epsilon is not provided, and is set to 0.1
-Gap is not provided, and is set to 10.0%
+Horizon is not provided, and is set to 1. 
+Epsilon is not provided, and is set to 0.1. 
+Gap is not provided, and is set to 10.0%. 
 
 Configuration:
 
+Use System of ODE's: True
 Display SCIP Output: False
 Save Solutions: False
 Dt Variable Name: Dt
 
 Domain (str): navigation
-Instance (int): 3
+Instance (str): 3
 Horizon (int): 1 (default)
 Epsilon (float): 0.1 (default)
 Gap (float): 10.0% (default)
@@ -21,39 +22,33 @@ BigM (float): 1000.0
 
 Encoding the problem over horizon h=1.
 Solving the problem.
-Horizon of h=1 is infeasible, incrementing to h=2
+Horizon of h=1 is infeasible, incrementing to h=2.
 Encoding the problem over horizon h=2.
 Solving the problem.
-Horizon of h=2 is infeasible, incrementing to h=3
+Horizon of h=2 is infeasible, incrementing to h=3.
 Encoding the problem over horizon h=3.
 Solving the problem.
-Horizon of h=3 is infeasible, incrementing to h=4
+Horizon of h=3 is infeasible, incrementing to h=4.
 Encoding the problem over horizon h=4.
 Solving the problem.
-Problem solved.
+Problem solved. 
 
-Solutions saved:
+Plan: 
+Accelerate_x at step 0 by value 0.500.
+Accelerate_y at step 0 by value 0.182.
+Dt at step 0 by value 2.715. 
 
-Plan:
-Accelerate_x at step 0 by value 0.344
-Accelerate_y at step 0 by value 0.046
-Mode at step 0 by value 0.000
-Dt at step 0 by value 5.870
+Accelerate_x at step 1 by value 0.500.
+Accelerate_y at step 1 by value -0.374.
+Dt at step 1 by value 1.285. 
 
-Accelerate_x at step 1 by value -0.500
-Accelerate_y at step 1 by value 0.333
-Mode at step 1 by value 1.000
-Dt at step 1 by value 1.905
+Accelerate_x at step 2 by value -0.333.
+Accelerate_y at step 2 by value 0.150.
+Dt at step 2 by value 8.058. 
 
-Accelerate_x at step 2 by value -0.500
-Accelerate_y at step 2 by value 0.140
-Mode at step 2 by value 0.000
-Dt at step 2 by value 3.403
+Accelerate_x at step 3 by value 0.176.
+Accelerate_y at step 3 by value -0.346.
+Dt at step 3 by value 4.514. 
 
-Accelerate_x at step 3 by value 0.106
-Accelerate_y at step 3 by value -0.500
-Mode at step 3 by value 1.000
-Dt at step 3 by value 2.775
-
-Total reward: -14.153
-Total time: 1050.837
+Total reward: -16.571
+Total time: 170.541
