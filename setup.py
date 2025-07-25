@@ -1,6 +1,6 @@
 import scipplan
 
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 
 def readme():
     with open("README.md") as f:
@@ -15,7 +15,7 @@ setup(
     license="MIT License",
     author=scipplan.__author__,
     author_email=scipplan.__email__,
-    packages=find_packages(),  # Automatically find all packages
+    packages=find_namespace_packages(),  # Automatically find all packages
     include_package_data=True,
     package_data={
         # "": ["translation/*.txt"], 
